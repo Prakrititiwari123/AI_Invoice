@@ -23,7 +23,13 @@ app.use(express.json({limit: "20mb"}));
 app.use(express.urlencoded({limit:"20mb", extended: true}));
 
 // database
-connectDB();
+const startServer = async () => {
+    await connectDB();
+
+    app.listen(port, () => {
+        console.log(`Server Started on http://localhost:${port}`);
+    });
+};
 
 
 //Routes
@@ -34,13 +40,8 @@ app.use('/api/businessProfile', businessProfileRouter);
 app.use('/api/aiInvoice', aiInvoiceRouter);
 
 
-
-
-
 app.get('/',(req, res)=> {
     res.send("API WORKING")
 });
 
-app.listen(port, () => {
-    console.log(`Server Started on http://localhost:${port}`);
-});
+startServer();

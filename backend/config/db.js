@@ -1,6 +1,19 @@
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    await mongoose.connect('mongodb+srv://aniket35mishra_db_user:invoice123@cluster0.qbrafbu.mongodb.net/InvoiceAI')
-    .then(() => { console.log('DB CONNECTED')})
-}
+    const mongoUri = process.env.MONGODB_URI;
+
+    if (!mongoUri) {
+        console.warn("MONGODB_URI is missing in backend/.env. Starting server without DB connection.");
+        return false;
+    }
+
+    try {
+        await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 10000 });
+        console.log("DB CONNECTED");
+        return true;
+    } catch (error) {
+        console.error("DB connection failed:", error.message);
+        return false;
+    }
+};
