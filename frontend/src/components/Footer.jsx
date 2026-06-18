@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className={footerStyles.footer}>
         <div className={footerStyles.container}>
             <div className={footerStyles.copyright}>
-                &copy; {new Date().getFullYear()} InvoiceAI • Built by Hexagon Digital Services 
+                &copy; {new Date().getFullYear()} InvoiceAI • Built by Hexagon Digital Service
             </div>
 
             <div className={footerStyles.links}>
