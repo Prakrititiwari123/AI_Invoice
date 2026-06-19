@@ -127,7 +127,7 @@ const Features = () => {
                     </span>
                 </h2>
                 <p className={featuresStyles.subtitle}>
-                  A minimal, intelligent interface that focuses on what truly matters
+                  A minimal, AI intelligent interface that focuses on what truly matters
                   - Create, send , and track invoice effortlessly while maintaining professional excellence.
                 </p>
             </div> 
