@@ -55,7 +55,7 @@ const AiInvoiceModal = ({open, onClose, onGenerate, initialText=""}) => {
                     </h3>
                     <p className={aiInvoiceModalStyles.description}>
                         Paste any text that contains invoice detail (client, items, qty, prices)
-                        and we'll attempt to extract an invoice
+                        and we'll attempt to extract an invoice using AI. You can then edit the invoice before saving.
                     </p>
                 </div>
                 <button onClick={() => onClose && onClose()}
