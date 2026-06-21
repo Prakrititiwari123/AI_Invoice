@@ -85,8 +85,8 @@ const AiInvoiceModal = ({open, onClose, onGenerate, initialText=""}) => {
               ))}
             {(/quota|exhausted|resource_exhausted/i.test(String(error)) && (
               <div style={{ marginTop: 8, fontSize: 13, color: "#374151" }}>
-                Tip: AI is temporarily unavailable (quota). Try again in a few
-                minutes, or create the invoice manually.
+                Tip: AI is temporarily unavailable (quota). Try to make again in a few
+                minutes, or create the invoice manually. 
               </div>
             )) ||
               null}
